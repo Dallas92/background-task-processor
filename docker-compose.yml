@@ -1,0 +1,36 @@
+services:
+  background-task-processor-1:
+    image: background-task-processor:latest
+    container_name: background-task-processor-1
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8080"
+    environment:
+      - DB_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - DB_DATASOURCE_USERNAME=user
+      - DB_DATASOURCE_PASSWORD=password
+
+  background-task-processor-2:
+    image: background-task-processor:latest
+    container_name: background-task-processor-2
+    restart: on-failure
+    depends_on:
+      - postgres
+    ports:
+      - "8082:8080"
+    environment:
+      - DB_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - DB_DATASOURCE_USERNAME=user
+      - DB_DATASOURCE_PASSWORD=password
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"

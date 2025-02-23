@@ -20,14 +20,20 @@ This is a Spring Boot application which accepts task creation requests which pro
 To run the application do the following:
 
 1. Build docker image with command
+
 ```bash
 docker build -t background-task-processor:latest .
 ```
 
 2. Run docker-compose with command
+
 ```bash
 docker-compose up -d 
 ```
 
 3. Send some request
 
+Use tasks.http file with requests located here
+```bash
+src/main/resources/http/tasks.http 
+```

@@ -1,9 +1,9 @@
 CREATE TABLE tasks (
-    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
-    min         INT NOT NULL,
-    max         INT NOT NULL,
-    count       INT NOT NULL,
-    counter     INT NULL,
-    is_complete BOOLEAN NULL,
-    version     INT NOT NULL
+    id          BIGSERIAL PRIMARY KEY,
+    min         INTEGER NOT NULL,
+    max         INTEGER NOT NULL,
+    count       INTEGER NOT NULL,
+    counter     INTEGER NOT NULL,
+    is_complete BOOLEAN NOT NULL,
+    version     INTEGER NOT NULL
 );
