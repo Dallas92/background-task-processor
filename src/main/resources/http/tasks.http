@@ -1,0 +1,13 @@
+### Start a new task
+POST http://localhost:8081/api/tasks
+Content-Type: application/json
+
+{
+  "min": 1,
+  "max": 10,
+  "count": 20
+}
+
+### Get task result by ID (replace `{taskId}` with actual ID)
+GET http://localhost:8081/api/tasks/{taskId}
+Accept: application/json
